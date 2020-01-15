@@ -1,0 +1,150 @@
+/***********************************************
+
+----------------cajas de contenido--------------
+
+************************************************/
+
+.caja{
+	background:#55a8fd;
+	align-items: center;
+	padding:20px;
+}
+
+.caja img{
+	height:100px;
+	float: left;
+	margin-right: 20px;
+	margin-bottom: 10px;
+}
+
+.caja imgder{
+	height:100px;
+	float: right;
+	margin-left: 20px;
+	margin-bottom: 10px;
+}
+
+p{
+	text-align: justify;
+}
+/***********************************************
+
+----------------menu--------------
+
+************************************************/
+
+a{
+	text-decoration: none;
+	color:#fff;
+}
+.btn-menu{
+	padding:18px;
+	display:block;
+	background:#00041F;
+	color:#fff;
+}
+.btn-menu .icono{
+	float:right;
+}
+
+.contemenu{
+	/*al eliminar esta propiedad quedo del ancho de la columna
+	width:100%;
+	/*min-width: auto;
+	/*esta propiedad controla el margin del menu flotante*/
+	margin: 0px;
+	/*display: inline-block;*/
+	font-family:'Roboto',sans-serif;
+	line-height: 18px;
+	/****************/
+	background: #fAA43D;
+	grid-column: 3/4;
+	/*centrar texto de forma
+	vertical y horizontal.. para ello se
+	usa FLEXBOX; GRID nos permite dar
+	estrutura, flexbox es para organizar
+	los elementos de forma Ver y Hor*/
+	/*esta parte es comentada para eliminar
+	el centrado del menu flotante*/
+	/*text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	/*tamaño minimo para reponsive*/
+	/*min-height: 100px;*/
+	/*CAMBIOS*/
+	grid-area:contemenu;
+	/*CAMBIOS-FIN*/
+	/*****/
+}
+.contemenu .menu{
+	width:100%;
+}
+
+.contemenu ul{
+list-style: none;
+}
+
+.contemenu .menu li a{
+	color:#494949;
+	display:block;
+	/*arriba - lados*/
+	padding:15px 20px;
+	background:#e9e9e9;
+}
+
+/*efectos e iconos a la derecha*/
+
+.contemenu .menu li a:hover{
+	background:#1a95d5;
+	color:#fff;
+}
+
+.contemenu .menu .icono{
+	/*tamaño del icono*/
+	font-size:12px;
+	/*tamaño de la fuente el mismo de arriba*/
+	line-height: 18px;
+}
+
+.contemenu .menu .icono.izquierda{
+	float:left;
+	margin-right: 10px;
+}
+
+.contemenu .menu .icono.derecha{
+	float:right;
+	margin-left: 10px;
+}
+
+/*sub menus*/
+.contemenu .menu ul {
+/*para ocultarlo*/
+	display:none;
+}
+/*accedemos a todos los elementos ul li a que estan dentro de la clase menu*/
+.contemenu .menu ul li a{
+	background: #424242;
+	color:#e9e9e9;
+	}
+
+@media screen and (max-width:768px){
+
+.contemenu{
+	/*margin:0;*/
+	/*width:90%;*/
+	/*mediante las siguientes es que el menu pasa a la parte de arriba*/
+	/*position:fixed;*/
+	top:0;
+	/*para que nada se sobreponga*/
+	z-index:100;
+}
+.btn-menu{
+	display:block;
+}
+.contemenu .menu{
+	display:none;
+}
+
+}

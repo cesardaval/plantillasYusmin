@@ -1,0 +1,172 @@
+/***********************************************
+
+----------------MAQUETA----------------------
+
+************************************************/
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	/*background: #E9ECF4;*/
+	background: #001A5E;
+	color: #000;
+	font-family: 'Roboto', sans-serif;
+}
+
+.contenedor {
+	width: 90%;
+	max-width: 1000px;
+	/*margin top-bot 20 px, lados=auto*/
+	margin: 20px auto;
+	display: grid;
+	/*margen de 20px entre cada elemento
+	pero no en la parte externa*/
+	grid-gap:20px;
+	/*crear tres columnas: widget1, widget2
+	y la barra dentro del contenedor..
+	seran 3 columnas del mismo tamaño (1fr)*/
+	grid-template-columns: repeat(3,1fr);
+	/* 4 filas con tamaño automatico*/
+	grid-template-rows: repeat(5,auto);
+
+	/*CAMBIOS*/
+	/*especificar cuantas filas y columnas*/
+	grid-template-areas: "header header header"
+						"contenido contenido contemenu"
+						"contenido contenido widgeta"
+						"contenido contenido widgetb"
+						"footer footer footer";
+	/*CAMBIOS-FIN*/
+	/*grid-template-areas: "header header header"
+						"contenido contenido contemenu"
+						"widgeta widgetb contemenu"
+						"footer footer footer";*/
+}
+
+/*accediendo directamente a los div
+dentro del contenedor..*/
+.contenedor > div,
+.contenedor .header,
+.contenedor .contemenu,
+.contenedor .contenido,
+.contenedor .footer{
+	/*background: #fff;*/
+	background:#E0E0E0FF;
+	padding:20px;
+	border-radius: 4px;
+}
+
+/*configurando el TAMAÑO del HEADER*/
+
+.contenedor .header{
+	/*background: #12203E;*/
+	/*color azul*/
+	background: #001A5E;
+	color: #fff;
+	/*CAMBIOS*/
+	grid-area:header;
+	/*CAMBIOS-FIN*/
+	/*para que no haya espacio alrededor de la imagen*/
+	padding:0;
+
+}
+/**********************/
+/*para que la imagen abarque todo el ancho del header*/
+.contenedor .header img{
+	/*CAMBIOS*/
+	width: 100%;
+	/*CAMBIOS-FIN*/
+}
+/***********************/
+
+/*Contenido abarque dos columnas*/
+.contenedor .contenido {
+	/*CAMBIOS*/
+	grid-area:contenido;
+	/*CAMBIOS-FIN*/
+}
+
+/*Que el SideBar abarque dos filas
+y posicion del sidebar a la derecha
+en la columna 3 a su borde 4*/
+/*.contenedor .sidebar{
+	background: #fAA43D;
+	grid-column: 3/4;
+	/*centrar texto de forma
+	vertical y horizontal.. para ello se
+	usa FLEXBOX; GRID nos permite dar
+	estrutura, flexbox es para organizar
+	los elementos de forma Ver y Hor*/
+	/*esta parte es comentada para eliminar
+	el centrado del menu flotante*/
+	/*text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	/*tamaño minimo para reponsive*/
+	/*min-height: 100px;
+
+	/*CAMBIOS*/
+	/*grid-area:sidebar;
+	/*CAMBIOS-FIN*
+}*/
+
+.contenedor .widgeta,
+.contenedor .widgetb{
+	background: #55a8fd;
+	color: #fff;
+	height: 100px;
+	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.contenedor .widgeta{
+	grid-area:widgeta;
+}
+.contenedor .widgetb{
+	grid-area:widgetb;
+}
+.contenedor .footer{
+	/*background: #12203e;*/
+	background:#000;
+	color: #fff;
+	/*CAMBIOS*/
+	grid-area:footer;
+	/*CAMBIOS-FIN*/
+}
+
+
+/***********************************************
+
+----------------REPONSIVE-----------------
+
+************************************************/
+
+@media screen and (max-width: 768px){
+	.contenedor {
+		grid-template-areas: "contemenu contemenu contemenu"
+							"header header header"
+						 "contenido contenido contenido"
+						  "widgeta widgeta widgetb"
+						 "footer footer footer";
+	}
+	.caja p{
+		clear: left;
+	}
+	.caja img{
+		/*position: absolute;*/
+		left:0px;
+		right:0px;
+		top:0px;
+		margin:auto;
+	}
+}
+
+
+
+/*file:///C:/Users/JOSE/Documents/PracticaMaquetaci%C3%B3n/prueba.html*/
